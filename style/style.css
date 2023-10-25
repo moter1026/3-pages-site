@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(./fonts.css);
+
 *{
     box-sizing: border-box;
 }
@@ -44,7 +45,7 @@ body {
 }
 .center_content_in_block {
     display: grid;
-    grid-template-columns: 500px 500px;
+    grid-template-columns: 450px 450px;
     justify-content: center;
 }
 .center_content_in_block img {
@@ -58,10 +59,27 @@ body {
 .center_content_in_block ul {
     display: inline;
 }
+@media screen and (width < 900px) {
+    .center_content_in_block {
+        grid-template-columns: 450px;
+        grid-template-rows: 40% 40%;
+    }
+    .center_content_in_block img {
+        margin: 0 auto;
+    
+        /* margin: 0 auto; */
+    }
+    main section div img{
+        margin:  0 auto !important;
+    }
+    header h1 {
+        text-align: center;
+    }
+}
 main {
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 40px 1fr 1fr 1fr 1fr ;
 }
 main section div img:nth-child(2n+1){
     margin:  auto 0;
@@ -77,9 +95,10 @@ main section div img:nth-child(2n){
 }
 header {
     background-color: black;
-    padding: 100px;
+    padding: 100px 0;
     color: white;
 }
+
 header h1 {
     font-size: 40px;
     height: fit-content;
